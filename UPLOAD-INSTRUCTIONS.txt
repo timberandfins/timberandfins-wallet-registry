@@ -1,0 +1,21 @@
+TIMBER&FINS WALLET REGISTRY — DESIGN UPDATE
+
+Upload these files to the ROOT of your existing GitHub repository and choose to replace the existing files:
+- index.html
+- styles.css
+- app.js
+- manifest.webmanifest
+- assets/icon.svg
+
+IMPORTANT: Keep your existing config.js. It contains your Google Apps Script URL.
+Do not delete it and do not replace it with a placeholder.
+
+On GitHub:
+1. Open the repository.
+2. Choose Add file > Upload files.
+3. Drag the contents of this update folder into the upload area.
+4. GitHub should show the files as changed/replaced.
+5. Enter the commit message: Premium mobile design update
+6. Click Commit changes.
+7. Wait one or two minutes, then reopen your GitHub Pages address.
+8. On iPhone Safari, refresh the page. If the old design remains, close the tab and reopen it.

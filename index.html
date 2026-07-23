@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#241f19">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Wallet Registry">
+  <title>Timber&Fins — Wallet Registry</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icon.svg">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="brand-header">
+      <div class="brand-lockup">
+        <div class="feather-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img">
+            <path d="M49.5 8.5C36 11.2 23.2 21.5 17.8 34.6c-3.2 7.8-3.6 14.2-3.7 18.9M46.8 12.2 19.4 45.4M34.4 18.8l3.8 8.6M25.7 26.1l4.1 9.2M41.7 14.4l1.8 5.7M20.1 35.3l4.5 8.2M31.1 38.5l9.8-1.4M24.9 44.9l8.5-.5"/>
+          </svg>
+        </div>
+        <div>
+          <p class="eyebrow">TIMBER&amp;FINS</p>
+          <h1>Wallet Registry</h1>
+        </div>
+      </div>
+      <button class="icon-button" id="refreshButton" aria-label="Refresh products" title="Refresh">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.34 5.66M20 4v7h-7"/></svg>
+      </button>
+    </header>
+
+    <section class="intro">
+      <p class="kicker">Workshop ledger</p>
+      <p>Record each individually numbered wallet before it leaves the workshop.</p>
+    </section>
+
+    <section class="card" aria-labelledby="formTitle">
+      <div class="card-heading">
+        <div>
+          <p class="section-label">NEW ENTRY</p>
+          <h2 id="formTitle">Register a wallet</h2>
+        </div>
+        <div class="connection" id="connectionStatus"><span></span> Connecting</div>
+      </div>
+
+      <form id="walletForm" novalidate>
+        <label>
+          <span>Order number</span>
+          <input id="orderNumber" name="orderNumber" inputmode="numeric" autocomplete="off" placeholder="e.g. 3364" required>
+        </label>
+
+        <label>
+          <span>Customer name</span>
+          <input id="customerName" name="customerName" autocomplete="name" placeholder="Full name" required>
+        </label>
+
+        <label>
+          <span>Wallet purchased</span>
+          <select id="product" name="product" required disabled>
+            <option value="">Loading wallet editions…</option>
+          </select>
+        </label>
+
+        <div class="number-preview" id="numberPreview" hidden>
+          <span class="number-label">NUMBER TO ASSIGN</span>
+          <strong id="nextNumber">—</strong>
+          <span class="number-caption">Individual wallet number</span>
+        </div>
+
+        <button class="primary-button" id="submitButton" type="submit" disabled>
+          <span>Register wallet</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+    </section>
+
+    <section class="recent" aria-labelledby="recentTitle">
+      <div class="recent-heading">
+        <div>
+          <p class="section-label">WORKSHOP LOG</p>
+          <h2 id="recentTitle">Latest registrations</h2>
+        </div>
+      </div>
+      <div id="recentOrders" class="records">
+        <p class="empty-state">Loading records…</p>
+      </div>
+    </section>
+
+    <footer class="footer">One Of A Kind, Made By Hand.</footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
